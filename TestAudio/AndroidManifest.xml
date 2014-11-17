@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.audio"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature android:glEsVersion="0x00020000" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.example.AudioService" />
+
+        <!-- framework -->
+        <activity
+            android:name="com.example.framework.AudioRecordActivity"
+            android:label="Framework AudioRecord" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.framework.AudioTrackActivity"
+            android:label="Framework AudioTrack" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.framework.MediaPlayerActivity"
+            android:label="Framework MediaPlayer" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.framework.MediaRecorderActivity"
+            android:label="Framework MediaRecorder" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.framework.SoundPoolActivity"
+            android:label="Framework SoundPool" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- pcm -->
+        <activity
+            android:name="com.example.pcm.EncodeConvertActivity"
+            android:label="PCM 编码转换8Bit转16Bit" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.pcm.MixerActivity"
+            android:label="PCM 混音" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.pcm.VolumeActivity"
+            android:label="PCM 声音控制" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- opensl -->
+
+        <activity
+            android:name="com.example.testopensl.URIActivity"
+            android:label="OpenSL URI播放" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+       <activity
+            android:name="com.example.testopensl.AudioTrackActivity"
+            android:label="OpenSL AudioTrack" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.testopensl.AudioRecordActivity"
+            android:label="OpenSL 录音" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- open max al -->
+        <activity
+            android:name="com.example.openmax.OpenMaxURIActivity"
+            android:label="OpenMax URI播放" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.openmax.OpenMaxActivity"
+            android:label="OpenMax TS播放" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- coder -->
+        <activity
+            android:name="com.example.coder.AACADTSEncoderActivity"
+            android:label="Coder AACADTS硬编码" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.coder.MediaExtractorActivity"
+            android:label="Coder MediaExtractor解码" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.coder.WavDecoderActivity"
+            android:label="Coder Wav解码" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.example.audio.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
